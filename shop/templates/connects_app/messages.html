@@ -1,0 +1,18 @@
+{% extends 'main_template.html' %}
+
+{% block title %}
+    تماس با ما
+{% endblock title %}
+
+
+{% block content %}
+
+
+    <form class="form container" id="myForm" method="post">
+        {% csrf_token %}
+        {{form.as_p}}       
+        <button type="submit">ثبت</button>
+    </form>
+
+{% endblock content %}
+

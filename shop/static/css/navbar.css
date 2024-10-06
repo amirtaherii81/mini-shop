@@ -1,0 +1,11 @@
+.navbar-nav {
+    direction: rtl;
+}
+
+.navbar-nav .nav-item {
+    text-align: right;
+}
+
+.bg-lightgray {
+    background-color: lightgray;
+}

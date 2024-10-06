@@ -1,0 +1,19 @@
+{% extends 'main_template.html' %}
+
+
+{% block title %}افزودن نظر{% endblock title %}
+
+{% block content %}
+    <div>
+        {% for comment in product.comment.all %}
+            <p>{{comment.name}}</p>
+            <p>{{comment.text}}</p>
+        {% endfor %}
+    </div>
+
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form.as_p}}
+        <button>ثبت</button>
+    </form>
+{% endblock content %}

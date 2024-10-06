@@ -1,0 +1,10 @@
+{% extends 'main_template.html' %}
+{% block title %}ثبت نام{% endblock title %}
+
+{% block content %}
+    <form class="container-login" action="" method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input class="button-login" type="submit" value="ثبت نام">
+    </form>
+{% endblock content %}

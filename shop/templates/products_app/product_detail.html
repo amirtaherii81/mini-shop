@@ -1,0 +1,34 @@
+{% extends 'main_template.html' %}
+{% load humanize %}
+
+{% block title %}
+  جزییات محصول
+{% endblock %}
+
+{% block content %}
+  <div class="product">
+    <div class="product-image">
+      <img src="{{ media_url }}/{{ product.image_product }}" alt="{{ product.title }}" />
+    </div>
+    <div class="product-details">
+      <h2>{{ product.brand_name }}</h2>
+      <p>{{ product.title }}</p>
+      {% for product_feaature in product.product_feature.all %}
+        <p>{{ product_feaature }}</p>
+      {% endfor %}
+      <p>{{ product.discription }}</p>
+      {% for comment in comments %}
+        <div style="padding-bottom: 10px;">{{ comment }}</div>
+      {% endfor %}
+      <br>
+        <a href="{% url 'products:comment' product.id %}">افزودن نظر</a>
+
+    </div>
+    <div class="product-sidebar">
+      <div class="price">
+        <h3>{{ product.price|intword }}</h3>
+        <button>سبد خرید</button>
+      </div>
+    </div>
+  </div>
+{% endblock %}

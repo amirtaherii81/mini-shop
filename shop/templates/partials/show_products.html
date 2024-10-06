@@ -1,0 +1,22 @@
+{% load humanize %}
+
+<div class="container">
+  {% for product in products %}
+    <div class="product-box">
+      <img src="{{ media_url }}/{{ product.image_product }}" alt="{{ product.title }}" />
+      <h2>{{ product.brand_name }}</h2>
+      <p>
+        عنوان محصول: {{ product.title }} <br /> {{ product.price|intword }}
+      </p>
+      <button class="product-box-button"><span style="font-size: small;">اضافه به سبد خرید</span></button>
+      <a class="product-box-button" href="{% url 'products:product_detail' product.id %}">جزییات کالا</a>
+      <div class="rating">
+        <span class="star">&#9733;</span>
+        <span class="star">&#9733;</span>
+        <span class="star">&#9733;</span>
+        <span class="star">&#9733;</span>
+        <span class="star">&#9734;</span>
+      </div>
+    </div>
+  {% endfor %}
+</div>

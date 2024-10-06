@@ -1,0 +1,15 @@
+.star {
+    color: #ccc;
+    font-size: 30px;
+    cursor: pointer;
+    user-select: none;
+  }
+  
+  .star.active,
+  .star:hover {
+    color: #ffd700;
+  }
+  
+  .product-rating {
+    padding: 20px;
+  }

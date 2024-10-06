@@ -1,0 +1,45 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>صفحه اصلی|{% block title %}{% endblock %}</title>
+    {% comment %} js & bootstrap {% endcomment %}
+    <link rel="stylesheet" href="{% static 'bootstrap-452/bootstrap.min.rtl.css' %}" />
+    <link rel="stylesheet" href="{% static 'js/bootstrap.min.js' %}" />
+    {% comment %} <link rel="stylesheet" href="{% static 'js/javascript.js' %}" /> {% endcomment %}
+
+    {% comment %} css {% endcomment %}
+    <link rel="stylesheet" href="{% static 'css/body.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/header.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/main/index.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/product/product_box.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/login_state/login.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/product/product_detail.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/connects/message.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/font.css' %}" />
+    {% comment %} <link rel="stylesheet" href="{% static 'css/product/product_star.css' %}" /> {% endcomment %}
+    {% comment %} <link rel="stylesheet" href="{% static 'js/product/product_star.js' %}" /> {% endcomment %}
+  </head>
+  <body >
+    {% include 'partials/header.html' %}
+
+    {% include 'partials/navbar.html' %}
+
+    {% include 'partials/message.html' %}
+
+    <main class="container">
+      {% block content %}
+    {% endblock %}
+  </main>
+  
+    {% include 'partials/footer.html' %}
+
+    {% include 'partials/script.html' %}
+  </body>
+</html>
